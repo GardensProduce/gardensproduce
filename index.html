@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gardens Produce Website | gardensproduceinc.</title>
+  <!-- Linking Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <!-- Linking Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="nav-logo">
+        <img src="images/garden logo small size.png" alt="Logo" class="logo-img">
+        <h2 class="logo-text"> Gardens Produce Inc.</h2>
+      </a>
+      <ul class="nav-menu">
+        <button id="menu-close-button" class="fas fa-times"></button>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="#menu" class="nav-link">Produce</a>
+        </li>
+        <li class="nav-item">
+          <a href="#testimonials" class="nav-link">Reviews</a>
+        </li>
+        <li class="nav-item">
+          <a href="#gallery" class="nav-link">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <button id="menu-open-button" class="fas fa-bars"></button>
+    </nav>
+  </header>
+
+  <style>
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      width: 95px;
+      height: auto;
+      margin-right: 20px;
+    }
+  </style>
+
+  <main>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow-section">
+      <div class="slideshow-container" onclick="toggleSlideshow()">
+        <div class="slide fade">
+          <img src="Slider Image/veggies.jpg" alt="Slide veggies">
+        </div>
+        <div class="slide fade">
+          <img src="Slider Image/broccoli.jpg" alt="Slide broccoli">
+        </div>
+        <div class="slide fade">
+          <img src="Slider Image/grape.jpg" alt="Slide grape">
+        </div>
+        <div class="slide fade">
+          <img src="Slider Image/logo.jpg" alt="Slide logo">
+        </div>
+        <div class="slide fade">
+          <img src="Slider Image/potato.jpg" alt="Slide potato">
+        </div>
+        <div class="slide fade">
+          <img src="Slider Image/cherry.jpg" alt="Slide cherry">
+        </div>
+        <div class="slide fade">
+          <img src="Slider Image/grapes_2.jpg" alt="Slide grapes_2">
+        </div>
+      </div>
+    </section>
+
+    <!-- Slideshow Styles -->
+    <style>
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden;
+        cursor: pointer;
+        /* Indica que se puede hacer clic */
+      }
+
+      .slide {
+        display: none;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 925px;
+      }
+
+      .fade {
+        animation: fadeEffect 2.5s;
+      }
+
+      @keyframes fadeEffect {
+        from {
+          opacity: 0.1;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+
+    <!-- Slideshow Script -->
+    <script>
+      let slideIndex = 0;
+      let playing = true;
+      let slideshowInterval;
+
+      function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = "block";
+      }
+
+      function startSlideshow() {
+        slideshowInterval = setInterval(showSlides, 3000);
+      }
+
+      function stopSlideshow() {
+        clearInterval(slideshowInterval);
+      }
+
+      function toggleSlideshow() {
+        if (playing) {
+          stopSlideshow();
+        } else {
+          startSlideshow();
+        }
+        playing = !playing;
+      }
+
+      // Iniciar slideshow automáticamente
+      showSlides();
+      startSlideshow();
+    </script>
+
+    <!-- Hero section -->
+    <section class="hero-section">
+      <div class="section-content">
+        <div class="hero-details">
+          <h2 class="title">Eat well - Live well - Be well</h2>
+          <h3 class="subtitle">Make your day great with our Fruits & Vegetables!</h3>
+          <p class="description">"Welcome to Gardens Produce Inc. Where every delivery brings you the freshest,
+            highest-quality vegetables straight from the farm to your table!"
+          </p>
+
+          <div class="buttons">
+            <a href="#contact" class="button order-now">Call Us</a>
+            <a href="#contact" class="button contact-us">Contact Us</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="images/Truck&Van.png" alt="Gardens" class="hero-image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section class="about-section" id="about">
+      <div class="section-content">
+        <div class="about-image-wrapper">
+          <img src="images/about-image.png" alt="About" class="about-image" />
+        </div>
+        <div class="about-details">
+          <h2 class="section-title">About Us</h2>
+          <p class="text">Gardens Produce INC. is a family owned business established in December 2020 in the produce
+            industry, Our mission at Gardens Produce is to provide quality produce and build long lasting relationships with our
+            valued customers. We understand how important quality and outstanding customer service is.
+            We deliver to small business, restaurants and catering companies.
+            Our goal is to provide our customers with top quality product which is guarenteed to last longer, allowing
+            them to save time, money and therefore reduce food waste.</p>
+          <h2 class="section-title"> Eat well - Live well - Be well </h2>
+          <div class="social-link-list">
+            <a href="https://www.facebook.com/profile.php?id=100064562700060" class="social-link"><i
+                class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/gardensproduce/" class="social-link"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/Gardens_Produce" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu section -->
+    <section class="menu-section" id="menu">
+      <h2 class="section-title">Our Produce</h2>
+      <p class="section-subtitle">We offer a wide range of nutritious products to satisfy our customers varied tastes.
+        Just one look at our produce and you will know that we sell only the highest quality fresh fruits and vegetables.
+        We take pride in finding and delivering the finest produce locally, regionally, and from around the world!
+      </p>
+      <div class="section-content">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <img src="images/Frutas.png" alt="Fresh Fruits" class="menu-image" />
+            <div class="menu-details">
+              <h3 class="name">Fresh Fruits</h3>
+              <p class="text">Providing fresh, delicious fruits straight from the source to you.</p>
+            </div>
+          </li>
+          <li class="menu-item">
+            <img src="images/Vegetales.png" alt="Fresh Vegetables" class="menu-image" />
+            <div class="menu-details">
+              <h3 class="name">Fresh Vegetables</h3>
+              <p class="text">We Deliver Quality Vegetables, Always on Time!</p>
+            </div>
+          </li>
+          <li class="menu-item">
+            <img src="images/Avocado.png" alt="avocado" class="menu-image" />
+            <div class="menu-details">
+              <h3 class="name">Avocado</h3>
+              <p class="text">Delivered to you. Perfect for your
+                recipes. Order now and taste the difference!" </p>
+            </div>
+          </li>
+          <li class="menu-item">
+            <img src="images/Banana.png" alt="Banana" class="menu-image" />
+            <div class="menu-details">
+              <h3 class="name">Bananas & Plantains</h3>
+              <p class="text">Start small, Think big! Adding Bananas or Plantains to your diet is a micro habit with
+                mega-health benefits.</p>
+            </div>
+          </li>
+          <li class="menu-item">
+            <img src="images/Coconut.png" alt="Coconut" class="menu-image" />
+            <div class="menu-details">
+              <h3 class="name">Coconut</h3>
+              <p class="text">Did you know! The healthy fats from Coconut can benefit memory & concentration, helping to
+                prevent diseases such as Alzheimer's.</p>
+            </div>
+          </li>
+          <li class="menu-item">
+            <img src="images/Lemons.png" alt="Lemons" class="menu-image" />
+            <div class="menu-details">
+              <h3 class="name">Lime & Lemons</h3>
+              <p class="text"> Perfect for making all of your favorite
+                beverages.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Testimonials section -->
+    <section class="testimonials-section" id="testimonials">
+      <h2 class="section-title" data-aos="fade-up" data-aos-duration="3000">What Our Customers Say</h2>
+      <!-- Subtítulo ajustado -->
+      <h3 class="section-subtitle testimonials-subtitle" data-aos="fade-up" data-aos-duration="3000"
+        data-aos-delay="50">
+        Discover what our valued customers have to say about their experiences with us. We take pride in delivering
+        high-quality products and exceptional service.
+      </h3>
+      <div class="section-content">
+        <div class="slider-container swiper">
+          <div class="slider-wrapper">
+            <ul class="testimonials-list swiper-wrapper">
+              <li class="testimonial swiper-slide" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="100">
+                <img src="images/user-1.jpg" alt="User" class="user-image" />
+                <h3 class="name">Greg Kilgore</h3>
+                <i class="feedback">"Very High Quality Products and Excellent Service!!"</i>
+              </li>
+              <li class="testimonial swiper-slide" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="200">
+                <img src="images/user-2.jpg" alt="User" class="user-image" />
+                <h3 class="name">Adalberto Cardosa</h3>
+                <i class="feedback">"Best produce distributor, the staff is very friendly and helpful, there are no
+                  words to describe their attention, the product is always fresh and top quality, I recommend it to
+                  anyone who likes to serve their customers well."</i>
+              </li>
+              <li class="testimonial swiper-slide" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
+                <img src="images/user-3.jpg" alt="User" class="user-image" />
+                <h3 class="name">Yaneth Zelaya</h3>
+                <i class="feedback">"Very Good Service. Produce is Always Fresh!"</i>
+              </li>
+              <li class="testimonial swiper-slide" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="400">
+                <img src="images/user-4.jpg" alt="User" class="user-image" />
+                <h3 class="name">Edwin Ortega</h3>
+                <i class="feedback">"Excellent quality! Always fresh produce and quick delivery. Highly recommend."</i>
+              </li>
+              <li class="testimonial swiper-slide" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="500">
+                <img src="images/user-5.jpg" alt="User" class="user-image" />
+                <h3 class="name">Anthony Laurent</h3>
+                <i class="feedback">"Best avocado I've ever tried! So creamy, rich, and full of flavor.
+                  Every bite was perfect—smooth, buttery, and just the right amount of freshness. Absolutely
+                  delicious!"</i>
+              </li>
+            </ul>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section class="gallery-section" id="gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="section-content">
+        <ul class="gallery-list">
+          <li class="gallery-item">
+            <img src="images/gallery-1.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-2.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-3.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-4.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-5.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-6.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-7.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-8.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-9.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-10.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-11.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-12.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-13.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-14.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-15.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-16.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-17.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-18.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-19.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-20.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-21.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-22.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-23.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+          <li class="gallery-item">
+            <img src="images/gallery-24.jpg" alt="Gallery Image" class="gallery-image" />
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!--Modal para imagen completa-->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage">
+    </div>
+
+    <style>
+      /* Estilos del modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        max-width: 50%;
+        max-height: 75%;
+        border-radius: var(--border-radius-s);
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .close:hover {
+        color: #ccc;
+      }
+    </style>
+
+    <script>
+      // Seleccionamos todos los elementos de imagen
+      const images = document.querySelectorAll(".gallery-image");
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const closeModal = document.querySelector(".close");
+
+      images.forEach(img => {
+        img.addEventListener("click", () => {
+          modal.style.display = "flex";
+          modalImg.src = img.src;
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      // Cerrar modal al hacer clic fuera de la imagen
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+
+
+    <!-- Contact section -->
+    <section class="contact-section" id="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="section-content">
+        <ul class="contact-info-list">
+          <li class="contact-info">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <p>3095 Acorn Ct. Woodbridge, VA 22193</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-envelope"></i>
+            <p>gardensproduce@gmail.com</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <p>(571) 645-9610 </p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <p>(571) 645-9510</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-globe"></i>
+            <p>www.gardensproduceinc.com</p>
+          </li>
+        </ul>
+
+        <div class="contact-container">
+          <form id="contact-form" class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" class="form-input" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" class="form-input" required
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message" class="form-input" rows="4"
+              required></textarea>
+
+            <button type="submit" class="button submit-button">Submit</button>
+          </form>
+
+          <p id="form-message" style="display: none; color: green; font-weight: bold;"></p>
+        </div>
+      </div>
+
+      <!-- Google Map -->
+      <div class="map-container">
+        <iframe width="100%" height="500" style="border:0; display:block;" loading="lazy" allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=3095+Acorn+Ct,+Woodbridge,+VA+22193&output=embed">
+        </iframe>
+      </div>
+    </section>
+
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", async function (event) {
+        event.preventDefault(); // Evita que la página se recargue
+
+        const form = event.target;
+        const formData = new FormData(form);
+        const formMessage = document.getElementById("form-message");
+
+        try {
+          const response = await fetch("https://formspree.io/f/xovjyqyv", {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (response.ok) {
+            form.reset(); // Limpia el formulario después del envío
+            formMessage.textContent = "✅ Message sent successfully!";
+            formMessage.style.display = "block";
+          } else {
+            formMessage.textContent = "❌ Error sending message. Please try again.";
+            formMessage.style.color = "red";
+            formMessage.style.display = "block";
+          }
+        } catch (error) {
+          formMessage.textContent = "❌ Network error. Please try again.";
+          formMessage.style.color = "red";
+          formMessage.style.display = "block";
+        }
+      });
+    </script>
+
+    <section class="thanks-section unique-thanks">
+      <div class="thanks-content unique-thanks-content">
+        <h2>Thanks for visiting us!</h2>
+        <p>We appreciate your visit and hope you enjoyed exploring our products.</p>
+        <p>Come back soon for more fresh and delicious produce!</p>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="footer-section">
+      <div class="section-content">
+        <p class="copyright-text">Copyright © 2025 Gardens Produce INC. All rights reserved.</p>
+
+        <div class="social-link-list">
+          <a href="https://www.facebook.com/profile.php?id=100064562700060" class="social-link"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/gardensproduce/" class="social-link"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/Gardens_Produce" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+
+        <p class="policy-text">
+          <a href="#" class="policy-link">Designed and develope</a>
+          <span class="separator">•</span>
+          <a href="#" class="policy-link">by Ludeck</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Linking Swiper script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Linking custom script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
