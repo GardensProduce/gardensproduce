@@ -819,6 +819,49 @@ header .navbar {
     align-items: center;
     flex-direction: column-reverse;
   }
+
+  @media screen and (max-width: 900px) {
+    /* Ajustes para la barra de menú */
+    header {
+      padding: 5px 0; /* Reducir el padding */
+    }
+  
+    .navbar {
+      padding: 0 10px; /* Reducir el padding interno */
+    }
+  
+    .nav-logo .logo-img {
+      width: 60px; /* Reducir el tamaño del logo */
+      margin-right: 10px; /* Reducir el margen */
+    }
+  
+    .nav-logo .logo-text {
+      font-size: 1.5rem; /* Reducir el tamaño del texto */
+    }
+  
+    .navbar .nav-menu {
+      top: 60px; /* Ajustar la posición del menú desplegable */
+      left: -300px; /* Ocultar el menú por defecto */
+      width: 250px; /* Reducir el ancho del menú */
+      padding-top: 80px; /* Ajustar el padding superior */
+    }
+  
+    .navbar .nav-menu .nav-link {
+      padding: 8px 12px; /* Reducir el padding */
+      font-size: 1rem; /* Reducir el tamaño de la fuente */
+    }
+  
+    .navbar #menu-open-button,
+    .navbar #menu-close-button {
+      font-size: 24px; /* Ajustar el tamaño del ícono */
+    }
+  
+    .navbar #menu-close-button {
+      top: 20px; /* Ajustar la posición del botón de cerrar */
+      right: 20px;
+    }
+  }
+
 }
 
 /* Responsive media query code for max width 640px */
@@ -846,3 +889,4 @@ header .navbar {
     gap: 20px;
   }
 }
+
