@@ -108,7 +108,16 @@
 
       .slide img {
         width: 100%;
-        height: 925px;
+        height: auto;
+        max-height: 80vh;
+      }
+
+      /* Estilos para móviles */
+      @media (max-width: 768px) {
+        .slide img {
+          max-height: 50vh;
+          /* Reducir el alto máximo en móviles */
+        }
       }
 
       .fade {
@@ -194,7 +203,8 @@
         <div class="about-details">
           <h2 class="section-title">About Us</h2>
           <p class="text">Gardens Produce INC. is a family owned business established in December 2020 in the produce
-            industry, Our mission at Gardens Produce is to provide quality produce and build long lasting relationships with our
+            industry, Our mission at Gardens Produce is to provide quality produce and build long lasting relationships
+            with our
             valued customers. We understand how important quality and outstanding customer service is.
             We deliver to small business, restaurants and catering companies.
             Our goal is to provide our customers with top quality product which is guarenteed to last longer, allowing
@@ -215,7 +225,8 @@
     <section class="menu-section" id="menu">
       <h2 class="section-title">Our Produce</h2>
       <p class="section-subtitle">We offer a wide range of nutritious products to satisfy our customers varied tastes.
-        Just one look at our produce and you will know that we sell only the highest quality fresh fruits and vegetables.
+        Just one look at our produce and you will know that we sell only the highest quality fresh fruits and
+        vegetables.
         We take pride in finding and delivering the finest produce locally, regionally, and from around the world!
       </p>
       <div class="section-content">
